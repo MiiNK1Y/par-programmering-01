@@ -10,9 +10,20 @@ namespace par_programmering_01
             {
                 return;
             }
-            else
+
+            switch (selected)
             {
-                Console.WriteLine($"You wrote: {selected}");
+                case '1': 
+                    ReverseString(); 
+                    break;
+                case '2':
+                    ToUpperCase();
+                    break;
+                case '3':
+                    ToLowerCase();
+                    break;
+                default:
+                    return;
             }
         }
 
