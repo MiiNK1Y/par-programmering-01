@@ -2,18 +2,19 @@ namespace par_programmering_01
 {
     internal class WithMenu
     {
+        public static string newString = "";
+        
         public static void Run()
         {
             writeMenu();
             char selected = getSelected();
-            if (selected == 'q')
-            {
-                return;
-            }
+
+            string myString = getString();
 
             switch (selected)
             {
-                case '1': 
+                case '1':
+                    newString = Reverse.Run(myString);
                     ReverseString(); 
                     break;
                 case '2':
@@ -33,19 +34,18 @@ namespace par_programmering_01
             Console.WriteLine("[1] Reverse string\n[2] Make uppercase\n[3] Make lowercase");
         }
 
+        public static string getString()
+        {
+            Console.Write("Your string: ");
+            string myString = Console.ReadLine();
+            return myString;
+        }
+
         public static char getSelected()
         {
             Console.Write("\nSelect [1/2/3]: ");
             var input = Console.ReadLine() ?? "q";
-
-            if (input.Length > 2 || input == " " || input == "q")
-            {
-                return 'q';
-            }
-            else
-            {
-                return Convert.ToChar(input);
-            }
+            return Convert.ToChar(input);
         }
     }
 }
