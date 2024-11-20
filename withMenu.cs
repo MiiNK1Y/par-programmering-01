@@ -1,12 +1,12 @@
-namespace linux
+namespace par_programmering_01
 {
     internal class WithMenu
     {
         public static void Run()
         {
             writeMenu();
-            var selected = getSelected();
-            if (!selected)
+            char selected = getSelected();
+            if (selected == 'q')
             {
                 return;
             }
@@ -19,17 +19,17 @@ namespace linux
         public static void writeMenu()
         {
             Console.WriteLine("Enter 'q' to exit.\n");
-            Console.Write("[1] Reverse string\n[2] Make uppercase\n[3] Make lowercase");
+            Console.WriteLine("[1] Reverse string\n[2] Make uppercase\n[3] Make lowercase");
         }
 
         public static char getSelected()
         {
             Console.Write("\nSelect [1/2/3]: ");
-            var input = Console.ReadLine();
+            var input = Console.ReadLine() ?? "q";
 
-            if (input.length > 2 || input == " " || input == "q")
+            if (input.Length > 2 || input == " " || input == "q")
             {
-                return 0;
+                return 'q';
             }
             else
             {

@@ -1,4 +1,4 @@
-namespace linux
+namespace par_programmering_01
 {
     public static class Reverse
     {
@@ -7,7 +7,7 @@ namespace linux
             Console.WriteLine("Hei, Skriv inn en tekst du ønsker å få reversert :)");
 
             Console.Write("Din input: ");
-            var input = Console.ReadLine();
+            var input = Console.ReadLine() ?? "";
             string reversedInput = "";
 
             foreach (var letter in input)
