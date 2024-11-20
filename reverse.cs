@@ -1,6 +1,6 @@
 namespace par_programmering_01
 {
-    public static class Reverse
+    internal static class Reverse
     {
         public static string Run(string myString)
         {

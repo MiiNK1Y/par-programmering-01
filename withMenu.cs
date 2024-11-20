@@ -1,27 +1,28 @@
 namespace par_programmering_01
 {
-    internal class WithMenu
+    internal static class WithMenu
     {
         public static string newString = "";
-        
+
         public static void Run()
         {
             writeMenu();
             char selected = getSelected();
-
-            string myString = getString();
+            string myString;
 
             switch (selected)
             {
                 case '1':
+                    myString = getString();
                     newString = Reverse.Run(myString);
-                    ReverseString(); 
+                    Console.WriteLine($"Your string, reversed: {newString}");
+                    //ReverseString();
                     break;
                 case '2':
-                    ToUpperCase();
+                    //ToUpperCase();
                     break;
                 case '3':
-                    ToLowerCase();
+                    //ToLowerCase();
                     break;
                 default:
                     return;
@@ -37,7 +38,7 @@ namespace par_programmering_01
         public static string getString()
         {
             Console.Write("Your string: ");
-            string myString = Console.ReadLine();
+            string myString = Console.ReadLine() ?? " ";
             return myString;
         }
 
